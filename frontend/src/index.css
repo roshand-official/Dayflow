@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* DayFlow Design Tokens */
+  --df-bg: #F7F6F2;
+  --df-surface: #FFFFFF;
+  --df-surface-glass: rgba(255, 255, 255, 0.7);
+  --df-text: #111111;
+  --df-muted: #777777;
+  --df-border: #E8E6E1;
+  /* Semantic Colors */
+  --df-lime: #D7FF00;
+  --df-lime-dark: #A8C900;
+  --df-success: #BFE8C4;
+  --df-success-text: #2A5A30;
+  --df-warning: #F4D98A;
+  --df-warning-text: #6B5205;
+  --df-danger: #F2A6A0;
+  --df-danger-text: #702621;
+  --df-info: #BFDCE8;
+  --df-info-text: #2A5366;
+  --df-dark: #161616;
+}
+
+.dark {
+  /* DayFlow Design Tokens - Dark Mode */
+  --df-bg: #111111;
+  --df-surface: #1E1E1E;
+  --df-surface-glass: rgba(30, 30, 30, 0.7);
+  --df-text: #F7F6F2;
+  --df-muted: #A0A0A0;
+  --df-border: #333333;
+  
+  /* Semantic Colors - adjusted for dark mode */
+  --df-success: #2A5A30;
+  --df-success-text: #BFE8C4;
+  --df-warning: #6B5205;
+  --df-warning-text: #F4D98A;
+  --df-danger: #702621;
+  --df-danger-text: #F2A6A0;
+  --df-info: #2A5366;
+  --df-info-text: #BFDCE8;
+  --df-dark: #FFFFFF;
+}
+
+:root {
+  /* Typography Scale */
+  --text-page-title: 32px;
+  --text-section-title: 20px;
+  --text-card-title: 16px;
+  --text-metric: 40px;
+  --text-body: 15px;
+  --text-secondary: 13px;
+  --text-label: 12px;
+
+  /* Spacing & Layout */
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  
+  --spacing-card: 24px;
+  --grid-gap: 20px;
+  
+  --btn-height: 48px;
+  --input-height: 48px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--df-bg);
+  color: var(--df-text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+}
+
+/* Typography Utilities */
+.text-page-title { font-size: var(--text-page-title); font-weight: 700; line-height: 1.2; }
+.text-section-title { font-size: var(--text-section-title); font-weight: 600; line-height: 1.3; }
+.text-card-title { font-size: var(--text-card-title); font-weight: 600; line-height: 1.4; }
+.text-metric { font-size: var(--text-metric); font-weight: 700; line-height: 1.1; }
+.text-body { font-size: var(--text-body); font-weight: 400; }
+.text-secondary { font-size: var(--text-secondary); font-weight: 400; color: var(--df-muted); }
+.text-label { font-size: var(--text-label); font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; color: var(--df-muted); }
+
+/* Glassmorphism Utilities */
+.glass-panel {
+  background: var(--df-surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+}
+
+.glass-card {
+  background: var(--df-surface);
+  border: 1px solid var(--df-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* Layout Utilities */
+.flex { display: flex; }
+.flex-col { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.gap-2 { gap: 8px; }
+.gap-3 { gap: 12px; }
+.gap-4 { gap: 16px; }
+.gap-5 { gap: 20px; }
+.gap-6 { gap: 24px; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--df-border);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--df-muted);
+}
