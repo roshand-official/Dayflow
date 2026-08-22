@@ -21,7 +21,13 @@ def get_attendance_trend(current_user: User = Depends(require_hr_officer), db: S
     days_data = {}
     for i in range(7):
         d = start_date + timedelta(days=i)
-        days_data[d] = {"name": d.strftime("%a"), "present": 0, "late": 0, "absent": 0}
+        days_data[d] = {
+            "name": d.strftime("%a"),
+            "date": d.isoformat(),
+            "present": 0,
+            "late": 0,
+            "absent": 0
+        }
         
     for r in records:
         if r.date in days_data:
